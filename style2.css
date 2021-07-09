@@ -1,0 +1,53 @@
+@charset "UTF-8";
+footer{
+  padding:0;
+}
+.copy-right{
+  position:fixed;
+  bottom:0;
+  left:50%;
+}
+
+/* アバウト　レスポンシブ  */
+@media screen and (max-width: 700px){
+  .wrapper{
+    padding:0;
+  }
+  #profile{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  #profile .title{
+    border-bottom: none;
+    position:relative;
+  }
+  #profile .title::after{
+    content:"　";
+    position: absolute;
+    bottom: -5px;
+    left:25%;
+    width:50%;
+    border-bottom:solid 1px #333;
+  }
+  #profile .profile-text p{
+    padding-right:50px;
+  }
+  #profile .profile-right{
+    width:100%;
+    margin:0;
+    margin-bottom: 50px;
+  }
+  .skill-list{
+    flex-direction: column;
+    align-items: center;
+  }
+  skill-list i{
+    margin:0;
+    width:100%;
+  }
+
+  .copy-right{
+    position: static;
+  }
+}
