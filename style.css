@@ -1,0 +1,378 @@
+@charset "UTF-8";
+
+ html{
+   font-size:100%;
+ }
+ 
+ *{
+  box-sizing:border-box;
+  padding:0;
+  margin:0;
+ 
+}
+
+ body{
+   color:#333;
+   font-size:0.875rem;
+   min-height:100vh;
+   position:relative;
+
+ }
+
+ a{
+   text-decoration: none;
+   color:#333;
+   /* あとで確認 */
+   transition:all 0.5s;
+ }
+
+ a:hover{
+   opacity:0.7;
+ }
+ /* コンテンツ幅の共通クラス */
+ .wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+ img{
+   max-width:100%;
+   height:auto;
+ }
+
+ li{
+   list-style:none;
+ }
+
+
+
+.content{
+  padding-top:120px;
+  padding-bottom: 160px;
+}
+
+ 
+ /* ヘッダーのデザイン */
+ #header{
+   width:100%;
+   height:80px;
+   padding:0 40px;
+   background-color: #EFEFF0;
+   display:flex;
+   align-items: center;
+   justify-content:space-between;
+   position: fixed;
+   left:0;
+   right:0;
+   z-index:10
+ }
+
+ /* サイトタイトル */
+ .site-title{
+   font-weight: normal;
+   font-size: 20px;
+   padding:10px 20px;
+   background-color:white;
+   border:solid 1px black;
+   border-radius: 10px;
+   font-family: 'Dancing Script', cursive;
+ }
+
+ .site-title:hover{
+   background-color:#EFEFF5 ;
+   transition:all 0.5s;
+  }
+ 
+  .site-title a:hover{
+    opacity:1;
+  }
+
+ /* ハンバーガーメニュー */
+ #navi{
+   position:fixed;
+   top:0;
+   width:300px;
+   right:-300px;
+   opacity:0; 
+   padding:36px 50px;
+   color:#fff;
+   transition:all 0.5s;
+   z-index:20
+
+ }
+#navi a{
+  color:#fff;
+}
+
+#navi li{
+  margin-bottom: 14px;
+}
+
+/* フレックスに反応しないように消す */
+#mask{
+  display:none;
+}
+
+/* ハンバーがメニューが開いている時 */
+.open #navi{
+  right:0;
+  opacity:1;
+}
+
+.navi-button{
+  width:30px;
+  height:30px;
+  position:relative;
+  transition:all 0.5s;
+  cursor:pointer;
+  z-index:20;
+  
+}
+.navi-button span{
+  display:block;
+  position:absolute;
+  width:30px;
+  height:2px;
+  background-color:#333;
+  border-radius:4px;
+  transition:all 0.5s;
+
+}
+
+/* ボタンの線の位置 */
+.navi-button span:nth-child(1){
+  top:10px;
+}
+.navi-button span:nth-child(2){
+  bottom:10px;
+}
+
+/* ハンバーガーメニューが開いている時の線のデザイン */
+
+.open .navi-button span{
+  background-color:#fff;
+}
+
+.open .navi-button span:nth-child(1){
+  -webkit-transform:translateY(4px) rotate(-45deg);
+  transform:translateY(4px) rotate(-45deg);
+}
+
+.open .navi-button span:nth-child(2){
+  -webkit-transform:translateY(-4px)rotate(45deg);
+  transform:translateY(-4px) rotate(45deg);
+}
+
+.open #mask{
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background:#000;
+  opacity:0.8;
+  z-index:10;
+  cursor:pointer;
+}
+
+/* 見出し */
+.main-title{
+  padding-top:80px;
+  text-align: center;
+  background-color:#EFEFF0;
+  height:350px;
+}
+
+.main-title p{
+  /* font-family: 'Shadows Into Light', cursive; */
+  font-family: 'Dancing Script', cursive;
+}
+
+.main-title .name{
+  padding-top:20px;
+  font-size:100px;
+  margin-bottom:10px;
+}
+.main-title .message{
+  font-size:30px;
+}
+.top-image{
+  height:500px;
+  width:100%;
+  
+}
+
+/* Worksデザイン */
+
+#work{
+  text-align: center;
+  padding-top:150px;
+  margin-bottom: 150px;
+}
+.section-title{
+  font-size:50px;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
+  margin-bottom:50px;
+  letter-spacing: 5px;
+  line-height: 1;
+  border-bottom:solid 2px black;
+  display:inline-block;
+}
+.work-list{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.work-list li{
+  width:35%;
+  margin:0 15px;
+  margin-bottom:20px;
+  border:solid 0.5px rgba(65, 65, 66,0.5);
+  border-radius: 10px;
+  padding:10px;
+}
+.work-list li:nth-child(3),
+.work-list li:nth-child(4){
+  margin-bottom: 0;
+}
+
+
+/* serviceデザイン */
+#service{
+  text-align: center;
+  padding-top:150px;
+}
+.service-title{
+  margin-bottom: 20px;
+
+  
+  
+}
+
+.service-list{
+  display:flex;
+  justify-content: center;
+}
+
+
+.service-item{
+  padding:0 50px;
+}
+
+.service-icon{
+  font-size:50px;
+  margin-bottom:20px;
+}
+
+
+.copy-right{
+  font-size: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* アバウト */
+
+#profile{
+  width: 100%;
+  padding-top:150px;
+  display:flex;
+  justify-content: center;
+}
+
+/* #profile .face-image{
+  width:30%
+} */
+#profile img{
+  width:300px;
+  height:300px;
+  border-radius: 50%;
+}
+
+#profile .title{
+  text-align: center;
+  border-bottom: solid 1px black;
+}
+
+#profile .profile-right{
+  width:40%;
+  margin-left:50px;
+}
+
+.profile-text{
+  margin-bottom:60px;
+}
+#profile .profile-text p{
+
+padding:30px 0 0 50px;
+}
+
+
+
+.skill-list{
+  display:flex;
+  justify-content:space-between;
+}
+
+.skill-list i{
+  width:30%;
+  margin:40px 50px 0 50px;
+}
+
+.skill-list p{
+  text-align: center;
+  
+  
+}
+
+
+/* スマホ */
+@media screen and (max-width: 700px){
+  /* スマホ版ヘッダー */
+
+  .site-title{
+    display:none;
+  }
+
+  .navi-button{
+    margin-left:20px;
+    
+  
+  
+  }
+  .main-title{
+    padding-top:80px;
+    text-align: left;
+    background-image:url(img/top.jpg);
+    background-size:cover;
+    height:300px;
+    color:white;
+    margin-bottom:30px;
+
+  }
+
+  .main-title .name{
+    padding-top:20px;
+    padding-left:20px;
+    font-size:50px;
+  }
+  .main-title .message{
+    font-size:20px;
+    padding-left:60px;
+  }
+  .top-image{
+    display:none;
+  }
+  .service-list{
+  flex-direction: column;
+  }
+
+  .service-item{
+    margin-bottom:50px;
+  }
+}
